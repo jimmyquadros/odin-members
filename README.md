@@ -1,22 +1,17 @@
 # odin-members
 
 TODO:
-    Add css styling
 
     Add validation to all forms
 
     Update forms to reflect validation feedback
 
-    move login to top/minimal
+    messages display date
 
-    make a membership option to appear for unverified logged in members
+    adjust messages styling
 
-    Add message model
+    messages can be edited by original poster
 
-    create message form
-
-    show messages
-
-    limit what messages are shown
+    limit what messages are shown (pagination?)
 
     implement admin options to delete

@@ -3,6 +3,33 @@ extends layout
 block content
   div#content
     div#index-content
-      img(id='index-top-svg', src='/images/eye-01.svg')
-      p.col-center Apply for Membership. 
-        a(href='/signup') Join Today 
+      if member && member.verified 
+        img.short-svg(id='index-top-svg', src='/images/eye-02.svg')
+        h3.col-center Say Something! 
+        form#message-form.col-center(method='POST', action='/message')
+          textarea(id='message', name='message')
+          button Post
+      else if member 
+        img.tall-svg(id='index-top-svg', src='/images/ear.svg')
+        p.col-center OK, #{member.username}, what's the secret password?
+        form.col-center(method='POST', action='/verify')
+          input(type='password', id='verify', name='verify')
+          button Submit
+      else
+        img.short-svg(id='index-top-svg', src='/images/eye-01.svg')
+        p.col-center Apply for Membership. 
+          a(href='/signup') Join Today 
+      #message-container
+        for message in messages 
+          .message-box 
+            .message-header 
+              if member 
+                p
+                  strong  #{member.username}
+                  |  said:
+              else
+                p
+                  strong ???
+                  |  said: 
+            .message-content
+              p #{message.content}
