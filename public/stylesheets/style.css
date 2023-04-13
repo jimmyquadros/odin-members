@@ -1,0 +1,87 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font: 1.25rem "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+.col-center {
+    align-self: center;
+}
+
+#header {
+    background-color: rgb(225, 225, 225);
+
+    display: flex;
+    justify-content: flex-end;
+    gap: 3px;
+    padding: 5px;
+    height: 32px;
+}
+
+#login-form {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: .75rem;
+}
+
+#header h3,
+#header p {
+    margin: 0;
+    padding: 0;
+}
+
+#header p,
+#header a {
+    font-size: .75rem;
+    align-self: flex-end;
+}
+
+#login-form input {
+    width: 100px;
+}
+
+#content {
+    display: flex;
+    justify-content: center;
+    /* outline: 2px solid blue; */
+}
+
+#index-content {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    /* outline: 3px solid green; */
+}
+
+#index-top-svg {
+    width: 100%;
+    max-width: 600px;
+    align-self: center;
+    /* outline: 2px solid red; */
+}
+
+#signup-form {
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px;
+}
+
+#signup-form input {
+    margin-bottom: 5px;
+}
+
+#signup-form button {
+    width: min-content;
+    align-self: flex-end;
+}
+
+.signup-content {
+    flex-direction: column;
+    align-items: center;
+}

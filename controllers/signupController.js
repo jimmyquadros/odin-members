@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const Member = require('../models/member');
 
 exports.signup_get = (req, res, next) => {
-    res.render('signup', { title: 'Sign Up' });
+    res.render('signup', { title: 'Sign Up', member: req.user });
 }
 
 exports.signup_post = (req, res, next) => {[

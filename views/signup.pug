@@ -1,11 +1,22 @@
 extends layout 
 
-block content 
-  form(method='POST', action='/signup')
-    label(for='username') User Name 
-    input(type='text' id='username', name='username')
-    label(for='password') Password 
-    input(type='password', id='password', name='password')
-    label(for='verify-password') Verify Password 
-    input(type='password', id='verify-password', name='verify-password')
-    button Submit 
+block content
+  div#content.signup-content
+    h2 Sign Up
+    if member 
+      h3 Already logged in! 
+      p 
+        a(href='/logout') Log Out 
+        span  or 
+        a(href='/') Go Home
+    else
+      form#signup-form(method='POST', action='/signup')
+        label(for='username') User Name 
+        input(type='text' id='username', name='username')
+        label(for='password') Password 
+        input(type='password', id='password', name='password')
+        label(for='verify-password') Verify Password 
+        input(type='password', id='verify-password', name='verify-password')
+        button Submit 
+      p Return 
+        a(href='/') home
