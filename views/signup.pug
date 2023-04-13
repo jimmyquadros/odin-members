@@ -1,0 +1,11 @@
+extends layout 
+
+block content 
+  form(method='POST', action='/signup')
+    label(for='username') User Name 
+    input(type='text' id='username', name='username')
+    label(for='password') Password 
+    input(type='password', id='password', name='password')
+    label(for='verify-password') Verify Password 
+    input(type='password', id='verify-password', name='verify-password')
+    button Submit 
