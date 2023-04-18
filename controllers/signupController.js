@@ -2,10 +2,15 @@ const bcrypt = require('bcryptjs');
 const Member = require('../models/member');
 
 exports.signup_get = (req, res, next) => {
-    res.render('signup', { title: 'Sign Up', member: req.user });
+    const errors = (req.session.signupErrors) ? req.session.signupErrors : null;
+    if (req.session.signupErrors) req.session.signupErrors = null;
+    res.render('signup', { title: 'Sign Up', member: req.user, errors });
 }
 
-exports.signup_post = (req, res, next) => {[
+exports.signup_post = (req, res, next) => {
+    if (req.session.signupErrors) {
+        return res.redirect('/signup');
+    }
     bcrypt.hash(req.body.password, 10, async (err, hashpass) => {
         try {
             const member = new Member({
@@ -20,4 +25,4 @@ exports.signup_post = (req, res, next) => {[
             return next(err);
         }
     })
-]}
+}

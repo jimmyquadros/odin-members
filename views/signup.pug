@@ -18,5 +18,8 @@ block content
         label(for='verify-password') Verify Password 
         input(type='password', id='verify-password', name='verify-password')
         button Submit 
+      if errors
+        for error in errors
+          p.error-message #{error.msg}
       p Return 
         a(href='/') home
