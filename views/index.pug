@@ -39,3 +39,13 @@ block content
                   |  said: 
             .message-content
               p #{message.content}
+            .message-footer 
+              if (member && member.verified)
+                div
+                  i #{message.posted_to_now}
+                  if message.date_updated
+                    |  (
+                    i #{message.updated_to_now}
+                    | )
+                if message.member.id === member.id
+                  a(href=message.url + '/update') Edit

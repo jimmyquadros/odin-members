@@ -1,0 +1,14 @@
+extends layout 
+
+block content 
+  #content 
+    #index-content
+      #message-form.col-center.top-margin
+        form#edit-form(method='POST')
+          textarea(id='message', name='message') #{null === content ? '' : content}
+          .message-update-action 
+            button Post
+            a(href='/') Cancel
+          if validError 
+            for error in validError
+              p.error-message #{error.msg}

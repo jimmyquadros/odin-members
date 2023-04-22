@@ -57,6 +57,10 @@ body {
     /* outline: 3px solid green; */
 }
 
+.top-margin {
+    margin-top: 20px;
+}
+
 #index-top-svg {
     width: 100%;
     align-self: center;
@@ -126,10 +130,29 @@ body {
 }
 
 .message-box {
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(193, 201, 200);
     width: 90%;
+    padding: 5px;
 }
 
 .message-box:nth-of-type(even) {
     align-self: flex-end;
+    background-color: rgb(201, 199, 193);
+}
+
+.message-content,
+.message-footer {
+    padding-left: 5px;
+}
+
+.message-footer {
+    display: flex;
+    justify-content: space-between;
+    font-size: .75rem;
+}
+
+.message-update-action {
+    display: flex;
+    gap: 3px;
+    justify-content: flex-end;
 }
